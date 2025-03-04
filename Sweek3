@@ -1,0 +1,136 @@
+Test Design Techniques Assignment
+
+1. What is Black-Box Testing, and How Does it Differ from White-Box Testing?
+
+Black-Box Testing
+
+Black-box testing is a software testing technique where the tester does not have any knowledge of the internal workings of the software. It focuses on verifying the functionality of the system based on input and expected output. Some common black-box testing techniques include equivalence partitioning, boundary value analysis, decision tables, and state transition testing.
+
+White-Box Testing
+
+White-box testing, on the other hand, involves testing the internal structure, logic, and code implementation of the software. Testers need to have knowledge of the system's code to create test cases. Some common white-box testing techniques include statement coverage, decision coverage, path coverage, and condition coverage.
+
+Key Differences
+
+1. Black-box testing focuses on functionality, while white-box testing focuses on internal implementation.
+
+
+2. Black-box testing does not require code knowledge, while white-box testing requires an understanding of the code.
+
+
+3. Black-box testing is performed by testers, while white-box testing is usually done by developers or testers with programming skills.
+
+
+
+
+---
+
+2. Explain the Concept of Equivalence Partitioning and How It Helps in Reducing Test Cases.
+
+Definition
+
+Equivalence partitioning is a black-box testing technique where input values are divided into different groups (equivalence classes) that are expected to produce the same result. Instead of testing every possible input, a representative value from each group is selected for testing.
+
+How It Reduces Test Cases
+
+By dividing inputs into equivalence classes, the number of test cases is significantly reduced. Since all values within a class are expected to behave the same, testing just one value from each class is sufficient.
+
+Example
+
+If a system accepts numbers from 1 to 100, instead of testing all 100 values, the inputs can be divided into:
+
+A valid partition (values between 1 and 100) → Example: Test with 50.
+
+An invalid partition below the range (values ≤ 0) → Example: Test with -1.
+
+An invalid partition above the range (values ≥ 101) → Example: Test with 150.
+
+
+This method ensures coverage with minimal test cases.
+
+
+---
+
+3. What is Boundary Value Analysis, and Why Is It Useful in Software Testing?
+
+Definition
+
+Boundary value analysis (BVA) is a black-box testing technique that focuses on testing the boundaries of input ranges. Since errors often occur at the edges of valid input ranges, testing these boundary values increases the likelihood of finding defects.
+
+Why It's Useful
+
+It helps identify off-by-one errors and edge-case issues.
+
+It ensures that both lower and upper boundary values are handled correctly.
+
+
+Example
+
+For a system accepting values from 1 to 100, the test cases would include:
+
+Lower boundary: Test with 1 (valid), 0 (just outside), and 2 (just inside).
+
+Upper boundary: Test with 100 (valid), 99 (just inside), and 101 (just outside).
+
+
+By testing these values, we can ensure the system properly handles boundary conditions.
+
+
+---
+
+4. Describe the Purpose of Decision Tables in Black-Box Testing and Provide an Example Scenario Where They Might Be Used.
+
+Purpose
+
+Decision tables help in testing complex business rules by listing different conditions and their corresponding actions. They ensure that all possible combinations of inputs are tested systematically.
+
+Example Scenario
+
+In an online banking system, a user can withdraw money only if certain conditions are met:
+
+The account balance must be greater than or equal to the withdrawal amount.
+
+The account must be active.
+
+The daily withdrawal limit must not be exceeded.
+
+
+For example:
+
+If the balance is sufficient, the account is active, and the daily limit is not exceeded, the withdrawal is allowed.
+
+If the balance is insufficient or the account is inactive, the withdrawal is denied.
+
+If the daily limit is exceeded, the withdrawal is also denied.
+
+
+By creating a decision table for such conditions, testers can ensure all possible scenarios are tested.
+
+
+---
+
+5. What Is State Transition Testing, and How Can It Be Applied to a User Account System?
+
+Definition
+
+State transition testing is a black-box testing technique that evaluates how a system transitions from one state to another based on user actions or events.
+
+Application to a User Account System
+
+A user account system typically goes through several states, such as:
+
+1. A new account is created when a user signs up.
+
+
+2. The account becomes active after the user verifies their email.
+
+
+3. If the user enters the wrong password three times, the account becomes locked.
+
+
+4. The user can unlock the account by resetting the password, returning it to the active state.
+
+
+5. If the user chooses to deactivate their account, it moves to the deactivated state
+
+
